@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* border: red 1px solid; */
+    font-size: 1em;
+}
+
+a,.toggleBtn div {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 900;
+}
+
+p {
+    color: #3A3A3A;
+}
+
+
+
+.logo a {
+
+    font-size: 1.4em;
+}
+
+
+.nav {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    align-items: center;
+    position: relative;
+}
+
+.menuCloseBtn {
+    display: none;
+}
+
+.navBtn {
+    display: none;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 40px;
+}
+
+.navBtn img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav ul li {
+    display: inline-block;
+    position: relative;
+    /* margin-right: 20px; */
+    cursor: pointer;
+    color: #3A3A3A;
+}
+.nav ul li a,.toggleBtn div{
+    padding: 10px;
+}
+
+.nav ul li:hover>ul {
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+.nav ul li:hover>._line {
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+._line{
+    width: 100%;
+    border: white 1px solid;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    transform: scale(0);
+    transition: all 0.5s ease;
+}
+.nav ul li ul {
+    position: absolute;
+    width: 200px;
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    transform: scale(0);
+    transform-origin: top center;
+    transition: all 0.3s ease;
+    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.127);
+}
+
+.nav ul li ul li {
+    position: relative;
+    display: block;
+
+}
+
+.nav ul li ul li a {
+    padding: 20px;
+    color: #3A3A3A;
+    display: block;
+}
+
+.nav ul li ul li :hover {
+    color: #226FB8;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.about {
+    display: block;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.aboutBox {
+    max-width: 650px;
+    display: inline-block;
+    justify-content: center;
+
+}
+
+.about img {
+    width: 300px;
+    vertical-align: top;
+    justify-content: center;
+}
+
+.title {
+    border-left: #3A3A3A 5px solid;
+    font-size: 1.5em;
+    padding-left: 10px;
+    margin: 30px;
+}
+
+.text {
+    color: #3A3A3A;
+    padding: 0 10px 40px 0;
+    margin: 30px;
+}
+
+.container .about .box {
+    margin: 30px;
+    display: block;
+}
+
+.container .about .box .ball {
+    border: #226FB8 dotted 2px;
+    background-color: #ffffff;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+.container .about .box p {
+    display: inline-block;
+    font-size: small;
+}
+.line{
+    position: absolute;
+     height: 250px; 
+     border: 1px solid #00000014; 
+     top: -10px;
+     left: 35px; 
+     z-index: -1;
+}
+.ytContainer {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin-bottom: 50px;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+footer img {
+    width: 30px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.show {
+    opacity: 1;
+}
+
+@media (max-width:820px) {
+    .about {
+        display: block;
+        padding: 50px 0;
+
+    }
+    .aboutBox {
+        display: block;
+        margin: 0 auto;
+        padding: 0 10px;
+    
+    }
+    .about img {
+
+        display: block;
+        margin: auto;
+    }
+
+    .menuCloseBtn {
+        display: block;
+        width: 100%;
+        background-color: #ffffff60;
+        box-shadow: 2px 2px 20px rgb(208, 208, 208);
+
+    }
+
+    .menuCloseBtn img {
+        width: 10px;
+        padding: 20px 0 20px 30px;
+
+
+    }
+    .menuBG{
+        background-color: #000000;
+        opacity: 0;
+        transition: opacity 0.3s ease; /* 添加透明度渐变效果，0.5秒的过渡时间，使用ease函数 */
+        width: 100vh;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: none;
+    }
+    .menu {
+        width: 80%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.574);
+        box-shadow: -1px 0px 10px black;
+        backdrop-filter: blur(10px);
+        position: fixed;
+        align-items: center;
+        top: 0;
+
+        z-index: 2;
+        transition: all 0.5s;
+
+    }
+
+    .menuOpen {
+        right: 0;
+
+    }
+
+    .menuClose {
+        right: -800px;
+
+    }
+
+    .nav {
+        padding: 37px 0 0 37px;
+    }
+
+    .nav ul li {
+        display: block;
+    }
+    .toggleBtn div{
+        color: #3A3A3A;
+        padding: 20px 0 20px 20px;
+    }
+    .nav ul li a {
+      color: #3A3A3A;
+      display: block;
+
+      padding: 20px;
+    }
+
+    .nav ul li ul {
+        display: none;
+        transform: scale(1);
+        position: relative;
+        box-shadow: none;
+        width: 100%;
+        margin-top: 0;
+        background-color: transparent;
+        transform-origin: top center;
+        transition: all 0.3s ease;
+    }
+.toggleBtn{
+    padding: 0 !important;
+}
+    .visible {
+        display: block !important;
+        transition: all 0.3s ease;
+
+
+    }
+
+    .nav ul li ul li {
+        position: relative;
+        display: block;
+
+    }
+
+    .nav ul li ul li a {
+        display: block;
+padding: 20px;
+        color: #3A3A3A;
+    }
+
+    .navBtn {
+        display: block;
+    }
+    .ytContainer{
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        .containerBox {
+            position: relative;
+        }
+
+        .dotContainer {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #555;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="containerBox">
+      <img src="img/10.jpg" alt="">
+      <img src="img/10.jpg" alt="">
+      <img src="img/10.jpg" alt="">
+        <!-- Your photo gallery content goes here -->
+
+        <div class="dotContainer" id="dotContainer"></div>
+    </div>
+
+    <script>
+        // Assuming you have a variable containing the number of photos
+        var numberOfPhotos = 3;
+
+        // Get the dotContainer element
+        var dotContainer = document.getElementById('dotContainer');
+
+        // Dynamically create dots based on the number of photos
+        for (let i = 0; i < numberOfPhotos; i++) {
+            var dot = document.createElement('div');
+            dot.className = 'dot';
+            dot.addEventListener('click', function() {
+                // Handle click on the dot (e.g., change displayed photo)
+                console.log('Clicked on dot ' + (i + 1));
+            });
+            dotContainer.appendChild(dot);
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        .containerBox {
+            position: relative;
+        }
+
+        .dotContainer {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #555;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="containerBox">
+        <!-- Your photo gallery content goes here -->
+
+        <div class="dotContainer" id="dotContainer"></div>
+    </div>
+
+    <script>
+        // Assuming you have a variable containing the number of photos
+        var numberOfPhotos = 3;
+
+        // Get the dotContainer element
+        var dotContainer = document.getElementById('dotContainer');
+
+        // Dynamically create dots based on the number of photos
+        for (let i = 0; i < numberOfPhotos; i++) {
+            var dot = document.createElement('div');
+            dot.className = 'dot';
+            dot.addEventListener('click', function() {
+                // Handle click on the dot (e.g., change displayed photo)
+                console.log('Clicked on dot ' + (i + 1));
+            });
+            dotContainer.appendChild(dot);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>岩盤之子</title>
+    <link rel="stylesheet" href="all.css">
+</head>
+<style>
+    .topContainer {
+        /* background-color: #EEEEEF; */
+        background-image: url(img/7.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 600px;
+    }
+
+    .box {
+        width: 100%;
+        height: auto;
+        margin: 50px 0;
+        padding: 0;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+    }
+
+    .box:hover>a img {
+        transform: scale(1.2);
+    }
+</style>
+
+<body>
+    <div class="topContainer">
+
+        <div class="nav">
+            <div class="logo"><a href="index.html">岩盤之子</a></div>
+
+            <div class="navBtn">
+                <img src="img/icon-4.png" alt="">
+            </div>
+            <div class="menu menuClose">
+                <ul>
+                    <div class="menuCloseBtn"> <img src="img/icon-6.png" alt=""></div>
+                    <li><span class="_line"></span><a href="about.html">關於藝術家</a> </li>
+                    <li class="toggleBtn"><div>作品展示 <img
+                                style="width: 10px; vertical-align: top; padding-top: 10px;" src="img/icon-7.png"
+                                alt=""></div> 
+                        <ul class="toggleItem">
+                            <li><a href="work-creation.html">陶瓷創作</a></li>
+                            <li><a href="work-practical.html">實用陶瓷</a></li>
+                        </ul>
+                    </li>
+
+                    <li><span class="_line"></span><a href="event.html">展覽和活動</a></li>
+                    <li><span class="_line"></span><a href="contact.html">聯絡資訊</a></li>
+                </ul>
+            </div>
+            <div class="menuBG">
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <a href="event1.html"><img src="img/event-1.png" alt=""></a>
+        </div>
+       
+    </div>
+    <footer>
+        <img src="img/icon-2.png" alt="">
+        <img src="img/icon-3.png" alt="">
+        <p>© 2023 岩盤之子</p>
+    </footer>
+
+    <script src="all.js"></script>
+</body>
+
+</html>
