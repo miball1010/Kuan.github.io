@@ -12,7 +12,7 @@ function display() {
     var columsCount = parseInt(containerＷidth / (boxWidth + gap));
     gap = ((containerＷidth - boxWidth * columsCount) / (columsCount + 1));
     const boxHeight = [];
-
+    
     for (let i = 0; i < box.length; i++) {
         //第一排
         if (i < columsCount) {
@@ -38,8 +38,13 @@ function display() {
 
 }
 window.onload = () => {
+    
+    boxChange();
+
     display();
 }
 window.onresize = () => {
-    display();
+     
+     boxChange();
+     display();
 }
