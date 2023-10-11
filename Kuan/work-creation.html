@@ -50,51 +50,37 @@
 
     .showBox {
         width: 100%;
-        height: 100vh;
-        background-image: url(img/bg.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.667);
         position: fixed;
         top: 0;
         left: 0;
         z-index: 3;
-         display: none; 
-    }
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+        /* 添加過渡效果 */
 
-    .showBoxCloseBtn {
-        position: absolute;
-        width: 30px;
-        top: 0;
-        right: 0;
-        margin: 30px;
-        opacity: 0.4;
-        transition: all 0.5s ease;
-        cursor: pointer;
     }
-
-    .showBoxCloseBtn:hover {
-        opacity: 1;
-        transform: rotate(180deg);
-    }
-
-    .showBoxCloseBtn img,
-    .showBoxImg img {
-        width: 100%;
-    transition: all 0.5s ease;
-    display: block;
-    }
-
 
     .showBoxImg {
-        max-width: 400px;
-        height: auto;
+        border: 10px solid white;
+        border-bottom: 50px solid white;
+        height: 90%;
+        width: auto;
         position: absolute;
         top: 50%;
-        left: 30%;
+        left: 50%;
         transform: translate(-50%, -50%);
-        border-radius: 5px;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.127);
-        overflow: hidden;
+    }
+
+    .showBoxImg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+        display: block;
     }
 
     .ballBox {
@@ -116,21 +102,30 @@
         cursor: pointer;
 
     }
-    .ball:hover{
+
+    .ball:hover {
         background-color: rgb(255, 255, 255);
 
+    }
+
+    .text {
+        position: absolute;
+        bottom: -35px;
+        left: 0;
+        padding: 0;
+        margin: 0;
     }
 </style>
 
 <body>
     <div class="showBox">
-        <div style="display: flex; width: 100%; height: 100%;">
-            <div class="showBoxCloseBtn"><img src="img/icon-6.png" alt=""></div>
-            <div class="showBoxImg"><img src="" alt="">
-                <div class="ballBox">
-                </div>
-            </div>
+
+
+        <div class="showBoxImg"><img src="img/a1-1.jpg" alt="">
+            <div class="ballBox"></div>
+            <div class="text">123</div>
         </div>
+    </div>
     </div>
     <div class="topContainer">
 
@@ -169,114 +164,199 @@
                 <img src="img/a1-1.jpg" alt="">
             </div>
             <div class="box">
-                <img src="img/2.jpg" alt="">
-            </div>
-            <div class="box">
-                <img src="img/10.jpg" alt="">
-            </div>
-            <div class="box">
-                <img src="img/4.jpg" alt="">
-            </div>
-            <div class="box">
-                <img src="img/5.jpg" alt="">
-            </div>
-            <div class="box">
-                <img src="img/5.jpg" alt="">
-            </div>
-            <div class="box">
-                <img src="img/10.jpg" alt="">
-            </div>
-            <div class="box">
-                <img src="img/10.jpg" alt="">
-            </div>
-
-            <div class="box">
-                <img src="img/3.jpg" alt="">
-            </div>
-            <div class="box">
-                <img src="img/3.jpg" alt="">
-            </div>
-            <div class="box">
-                <img src="img/3.jpg" alt="">
-            </div>
-            <div class="box">
-                <img src="img/3.jpg" alt="">
-            </div>
-            <div class="box">
-                <img src="img/10.jpg" alt="">
-            </div>
-            <div class="box">
-                <img src="img/10.jpg" alt="">
+                <img src="img/b1-1.jpg" alt="">
             </div>
         </div>
     </div>
     <footer>
-        <img src="img/icon-2.png" alt="">
-        <img src="img/icon-3.png" alt="">
+        <a href="https://www.instagram.com/figure_among_ground/?igshid=NTc4MTIwNjQ2YQ%3D%3D"><img src="img/icon-2.png" alt=""></a>
+        <a href="mailto:branson871021@gmail.com"><img src="img/icon-3.png" alt=""></a>
         <p>© 2023 岩盤之子</p>
     </footer>
 
     <script src="all.js"></script>
     <script src="work.js"></script>
     <script>
-        const worksA = [[1, 3]];//第幾個,有幾張
-        const showBox = document.querySelector('.showBox');
-        const showBoxCloseBtn = document.querySelector('.showBoxCloseBtn');
-        const showBoxImgSrc = document.querySelector('.showBoxImg img');
-        const ballBox=document.querySelector('.ballBox');
-        //const box = document.querySelectorAll('.box');
+        const worksA = [[1, 3, "標題文字..."]];//第幾個,有幾張
+        const worksB = [[1, 1, "標題文字..."]];//第幾個,有幾張
 
-        showBoxCloseBtn.onclick = () => {
-            showBox.style.display = 'none';
-        };
+        const showBox = document.querySelector('.showBox');
+        const showBoxImgSrc = document.querySelector('.showBoxImg img');
+        const ballBox = document.querySelector('.ballBox');
+        const text = document.querySelector('.text');
+        //const box = document.querySelectorAll('.box');
+        const showBoxImg = document.querySelector('.showBoxImg');
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        var a;
+        var prefix;
+        var numberPart;
+        var index = 1;
+        var all;
+
+        //關閉
+        document.addEventListener('click', function (event) {
+            console.log(event.target);
+            if (showBox === event.target) {
+                ballBox.innerHTML = "";
+                showBox.style.opacity = '0';
+                showBox.style.display = "none";
+                a = null;
+                prefix = null;
+                numberPart = null;
+                index = 1;
+                all = 0;
+
+
+            }
+        });
+
         box.forEach((hi) => {
             hi.onclick = () => {
                 showBox.style.display = 'block';
-                var a = hi.children[0];
+
+                setTimeout(() => {
+                    showBox.style.opacity = '1';
+                }, 300);
+
+                a = hi.children[0];
                 var srcValue = a.getAttribute('src');
 
                 // 使用正則表達式匹配 "a" 和 "10" 部分
                 var matchResult = srcValue.match(/([a-zA-Z]+)(\d+)-(\d+)\.jpg/);
 
                 if (matchResult) {
-                    var prefix = matchResult[1];  // 匹配的字母部分
-                    var numberPart = matchResult[2];  // 匹配的數字部分
+                    prefix = matchResult[1];  // 匹配的字母部分
+                    numberPart = matchResult[2];  // 匹配的數字部分
                     console.log("字母部分:", prefix);
                     console.log("數字部分:", numberPart);
                 } else {
                     //console.log("未找到匹配");
                 }
                 showBoxImgSrc.src = srcValue;
-                if (prefix == 'a') {
-                    for (var i = 0; i < worksA.length; i++) {
-                        if (worksA[i][0] == numberPart) {
-                            for(var j=0;j<worksA[i][1];j++){
-                                var ball = document.createElement('div');
-                            ball.className='ball';
-                            ball.setAttribute('data-index',j+1)
+                boxChange();
+
+            };
+        });
+
+        function boxChange() {
+            ballBox.innerHTML = "";
+            screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            if (prefix == 'a') {
+                if (screenWidth > screenHeight) {
+                    showBoxImg.style.height = '85%';
+                    showBoxImg.style.width = 'auto';
+                }
+                else {
+                    showBoxImg.style.width = '80%';
+                    showBoxImg.style.height = 'auto';
+                }
+
+
+                for (var i = 0; i < worksA.length; i++) {
+                    if (worksA[i][0] == numberPart) {
+                        text.innerHTML = worksA[i][2];
+                        all = worksA[i][1];
+
+                        if(worksA[i][1]!=1)
+                        for (var j = 0; j < worksA[i][1]; j++) {
+                            var ball = document.createElement('div');
+                            ball.className = 'ball';
+                            ball.setAttribute('data-index', j + 1)
                             ballBox.appendChild(ball);
 
-                            ball.addEventListener('click',function(){
+                            ball.addEventListener('click', function () {
                                 var dataIndex = this.getAttribute('data-index');
                                 console.log(dataIndex);
-                                showBoxImgSrc.src = 'img/'+prefix+numberPart+'-'+dataIndex+'.jpg';
-
+                                index = dataIndex;
+                                showBoxImgSrc.src = 'img/' + prefix + numberPart + '-' + dataIndex + '.jpg';
 
                             });
-                            }
-                           
                         }
                     }
                 }
-                else if (prefix == 'b') {
-
+            }
+            else if (prefix == 'b') {
+                if (screenWidth > screenHeight) {
+                    showBoxImg.style.height = 'auto';
+                    showBoxImg.style.width = '60%';
+                }
+                else {
+                    showBoxImg.style.width = '80%';
+                    showBoxImg.style.height = 'auto';
                 }
 
 
+                for (var i = 0; i < worksB.length; i++) {
+                    if (worksB[i][0] == numberPart) {
+                        text.innerHTML = worksB[i][2];
+                        all = worksB[i][1];
+                        if(worksB[i][1]!=1)
+                        for (var j = 0; j < worksB[i][1]; j++) {
+                            
+                            var ball = document.createElement('div');
+                            ball.className = 'ball';
+                            ball.setAttribute('data-index', j + 1)
+                            ballBox.appendChild(ball);
 
-            };
+                            ball.addEventListener('click', function () {
+                                var dataIndex = this.getAttribute('data-index');
+                                console.log(dataIndex);
+                                index = dataIndex;
+                                showBoxImgSrc.src = 'img/' + prefix + numberPart + '-' + dataIndex + '.jpg';
 
+                            });
+                        }
+                    }
+                }
+            }
+        };
+
+        let startPosition = 0;
+
+        // Touch start event
+        showBox.addEventListener('touchstart', (e) => {
+            startPosition = e.touches[0].clientX;
         });
+
+        // Touch end event
+        showBox.addEventListener('touchend', (e) => {
+            const endPosition = e.changedTouches[0].clientX;
+
+            // Determine the direction of the swipe
+            if (startPosition > endPosition) {
+                // Swipe to the left
+                console.log("next");
+                nextImage();
+            } else {
+                // Swipe to the right
+                console.log("prevImage");
+                prevImage();
+            }
+        });
+
+        // Next image function
+        function nextImage() {
+            index++;
+            console.log(index);
+            if (index > all)
+                index = 1;
+            showBoxImgSrc.src = 'img/' + prefix + numberPart + '-' + index + '.jpg';
+
+
+
+
+        }
+
+        // Previous image function
+        function prevImage() {
+            index--;
+            if (index < 1)
+                index = all;
+            showBoxImgSrc.src = 'img/' + prefix + numberPart + '-' + index + '.jpg';
+        }
     </script>
 </body>
 
