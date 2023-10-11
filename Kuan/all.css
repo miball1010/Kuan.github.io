@@ -16,8 +16,6 @@ p {
     color: #3A3A3A;
 }
 
-
-
 .logo a {
 
     font-size: 1.4em;
@@ -163,8 +161,9 @@ p {
     height: 10px;
     display: inline-block;
     border-radius: 50px;
-position: absolute;
-top: 5px;}
+    position: absolute;
+    top: 5px;
+}
 
 .container .about .box p {
     display: inline-block;
