@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>岩盤之子</title>
+    <link rel="stylesheet" href="all.css">
+</head>
+<style>
+    .topContainer {
+        background-image: url(img/bg-1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 600px;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .containerBox {
+        margin: 20px 0;
+    }
+
+    .box {
+        width: 290px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.127);
+        height: auto;
+        cursor: pointer;
+        position: absolute;
+        overflow: hidden;
+    }
+
+    .box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: all 0.5s ease;
+    }
+
+    .box:hover>img {
+        transform: scale(1.2);
+    }
+
+    .showBox {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.667);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .showBoxImg {
+        border: 10px solid white;
+        border-bottom: 50px solid white;
+        height: 90%;
+        width: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.127);
+    }
+
+    .showBoxImg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+        display: block;
+    }
+
+    .ballBox {
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        text-align: center;
+    }
+
+    .ball {
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 10px;
+        height: 10px;
+        margin: 3px;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+
+    }
+
+    .ball:hover {
+        background-color: rgb(255, 255, 255);
+
+    }
+
+    .text {
+        position: absolute;
+        bottom: -35px;
+        left: 0;
+        padding: 0;
+        margin: 0;
+    }
+</style>
+
+<body>
+    <div class="showBox">
+        <div class="showBoxImg"><img src="" alt="">
+            <div class="ballBox"></div>
+            <div class="text"></div>
+        </div>
+    </div>
+    <div class="topContainer">
+<h1>陶瓷創作</h1>
+        <div class="nav">
+            <div class="logo"><a href="index.html">岩盤之子</a></div>
+
+            <div class="navBtn">
+                <img src="img/icon-4.png" alt="">
+            </div>
+            <div class="menu menuClose">
+                <ul>
+                    <div class="menuCloseBtn"> <img src="img/icon-6.png" alt=""></div>
+                    <li><span class="_line"></span><a href="about.html">關於藝術家</a> </li>
+                    <li class="toggleBtn">
+                        <div>作品展示 <img style="width: 10px; vertical-align: top; padding-top: 10px;" src="img/icon-7.png"
+                                alt=""></div>
+                        <ul class="toggleItem">
+                            <li><a href="work-creation.html">陶瓷創作</a></li>
+                            <li><a href="work-practical.html">實用陶瓷</a></li>
+                        </ul>
+                    </li>
+                    <li><span class="_line"></span><a href="event.html">展覽和活動</a></li>
+                    <li><span class="_line"></span><a href="contact.html">聯絡資訊</a></li>
+                </ul>
+            </div>
+            <div class="menuBG">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="containerBox">
+            <div class="box">
+                <img src="img/a1-1.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="img/a2-1.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="img/a3-1.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="img/a4-1.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="img/a5-1.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="img/a6-1.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="img/b1-1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <a href="https://www.instagram.com/figure_among_ground/?igshid=NTc4MTIwNjQ2YQ%3D%3D"><img src="img/icon-2.png"
+                alt=""></a>
+        <a href="mailto:branson871021@gmail.com"><img src="img/icon-3.png" alt=""></a>
+        <p>© 2023 岩盤之子</p>
+    </footer>
+
+    <script src="all.js"></script>
+    <script src="work.js"></script>
+</body>
+
+</html>
