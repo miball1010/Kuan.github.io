@@ -11,7 +11,14 @@ a,
     color: #ffffff;
     font-weight: 900;
 }
-
+h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.5);
+}
 p {
     color: #3A3A3A;
 }
@@ -105,7 +112,7 @@ p {
 }
 
 .nav ul li ul li :hover {
-    color: #226FB8;
+    color: #000000;
 }
 
 .container {
@@ -208,6 +215,13 @@ footer img:hover {
 }
 
 @media (max-width:820px) {
+    h1{
+        font-size: 70px;
+        writing-mode: vertical-rl; /* 將文本垂直排列，可以根據需要使用 vertical-lr 進行反向排列 */
+        text-orientation: mixed;   /* 調整文本方向 */
+        white-space: nowrap;  
+        top: 60%;
+    }
     .about {
         display: block;
         padding: 50px 0;
