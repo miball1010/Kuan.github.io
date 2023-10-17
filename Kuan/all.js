@@ -2,6 +2,8 @@ const menu = document.querySelector('.menu');
 const menuCloseBtn = document.querySelector('.menuCloseBtn');
 const menuBG = document.querySelector('.menuBG');
 const navBtn = document.querySelector('.navBtn');
+const toggleBtn = document.querySelector('.toggleBtn');
+const toggleItem = document.querySelectorAll('.toggleItem');
 
 //打開菜單
 navBtn.onclick = function () {
@@ -30,6 +32,16 @@ function menuBG2() {
     setTimeout(()=>{
         menuBG.style.display = 'none';
     },300);
+};
+
+//打開作品
+toggleBtn.onclick = function () {
+    toggleItem.forEach(item => {
+        item.classList.toggle('visible');
+
+    });
+  
+    
 };
 
 document.addEventListener('click', function (event) {
