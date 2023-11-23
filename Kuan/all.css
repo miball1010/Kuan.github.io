@@ -221,11 +221,13 @@ footer img:hover {
     opacity: 1;
 }
 
-.about img.showAni {
+.about img.showAni,
+.containerBox.showAni {
     animation: upup 1s ease forwards;
 }
 
-.aboutBox .box1.showAni {
+.aboutBox .box1.showAni,
+.aboutBox.showAni {
     animation: LL 1s ease forwards;
 }
 
