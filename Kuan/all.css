@@ -5,11 +5,17 @@
     font-size: 1em;
 }
 
-a,
+a {
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.topContainer a,
 .toggleBtn div {
     text-decoration: none;
     color: #ffffff;
     font-weight: 900;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.521);
 }
 
 h1 {
@@ -59,7 +65,6 @@ p {
     display: inline-block;
     position: relative;
     cursor: pointer;
-    color: #3A3A3A;
 }
 
 .nav ul li a,
@@ -78,13 +83,16 @@ p {
 }
 
 ._line {
-    width: 100%;
+    margin: 0 8px;
+    width: 80%;
     border: white 1px solid;
     position: absolute;
     bottom: -8px;
     left: 0;
     transform: scale(0);
     transition: all 0.5s ease;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.521);
+
 }
 
 .nav ul li ul {
@@ -101,13 +109,13 @@ p {
 .nav ul li ul li {
     position: relative;
     display: block;
-
 }
 
 .nav ul li ul li a {
     padding: 20px;
     color: #3A3A3A;
     display: block;
+    text-shadow: none;
 }
 
 .nav ul li ul li :hover {
@@ -179,6 +187,7 @@ p {
 
 .ytContainer {
     position: relative;
+    margin: auto;
     width: 100%;
     padding-bottom: 56.25%;
     height: 0;
@@ -210,6 +219,51 @@ footer img:hover {
 
 .show {
     opacity: 1;
+}
+
+.about img.showAni {
+    animation: upup 1s ease forwards;
+}
+
+.aboutBox .box1.showAni {
+    animation: LL 1s ease forwards;
+}
+
+.aboutBox .box2.showAni .box {
+    animation: upup 1s ease forwards;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+.about img,
+.aboutBox .box1,
+.aboutBox .box2 .box {
+    opacity: 0;
+}
+
+@keyframes upup {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+
+    }
+}
+
+@keyframes LL {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+
+    }
 }
 
 @media (max-width:820px) {
@@ -305,12 +359,14 @@ footer img:hover {
     .toggleBtn div {
         color: #3A3A3A;
         padding: 20px 0 20px 20px;
+        text-shadow: none;
+
     }
 
     .nav ul li a {
         color: #3A3A3A;
         display: block;
-
+        text-shadow: none;
         padding: 20px;
     }
 
@@ -324,10 +380,12 @@ footer img:hover {
         background-color: transparent;
         transform-origin: top center;
         transition: all 0.3s ease;
+
     }
 
     .toggleBtn {
         padding: 0 !important;
+
     }
 
     .visible {
