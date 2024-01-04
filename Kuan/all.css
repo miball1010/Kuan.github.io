@@ -3,11 +3,13 @@
     padding: 0;
     /* border: red 1px solid; */
     font-size: 1em;
+    font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
 }
 
 a {
     text-decoration: none;
     font-weight: 900;
+    color: #3A3A3A;
 }
 
 .topContainer a,
@@ -34,12 +36,18 @@ p {
 .logo a {
     font-size: 1.4em;
 }
+.logo{
+    width: 130px;
+}
+.logo img{
+    width: 100%;
+}
 
 .nav {
     width: 90%;
     display: flex;
     justify-content: space-between;
-    padding: 40px;
+    padding: 25px;
     align-items: center;
     position: relative;
 }
@@ -154,6 +162,7 @@ p {
     font-size: 1.5em;
     padding-left: 10px;
     margin: 30px;
+    font-weight: 600;
 }
 
 .text {
@@ -353,7 +362,8 @@ footer img:hover {
     }
 
     .nav {
-        padding: 37px 0 0 37px;
+        padding: 30px 0 0 7px;
+        width: 100%;
     }
 
     .nav ul li {
