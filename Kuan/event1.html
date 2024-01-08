@@ -11,13 +11,11 @@
 </head>
 <style>
     .topContainer {
-        background-image: url(img/event-1.png);
+        background-image: url(img/event-1.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        background-position:center;
         height: 600px;
         position: relative;
-
     }
 
     .imgBox {
@@ -38,7 +36,6 @@
         transform: scale(1.2);
     }
 
-
     .title,
     p {
         margin: 5px;
@@ -47,15 +44,30 @@
     @media (max-width:820px) {
         .title {
             margin: 5px 0 0 30px;
-
         }
-
         p {
             padding: 30px;
         }
         .topContainer {
-        background-position-x: -40px;
+            background-image: url(img/event-1-p.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+            position: relative;
+            background-size: 110%;
+        }
     }
+
+    @media (max-width:620px) {
+        .topContainer {
+            background-image: url(img/event-1-p.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+            position: relative;
+            background-position-y: -180px;
+            background-position: bottom;
+        }
     }
 </style>
 
@@ -155,7 +167,7 @@
         <a href="https://www.instagram.com/figure_among_ground/?igshid=NTc4MTIwNjQ2YQ%3D%3D"><img src="img/icon-2.png"
                 alt=""></a>
         <a href="mailto:branson871021@gmail.com"><img src="img/icon-3.png" alt=""></a>
-        <p>© 2023 岩盤之子</p>
+        <p>© 2023 Chan Kuan</p>
     </footer>
 
     <script src="all.js"></script>
